@@ -242,18 +242,44 @@ export function QuestoesEnem() {
 
                       {/* Action Buttons */}
                       <div className="flex gap-2 pt-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="flex-1"
-                          onClick={() => {
-                            // Show full question in modal or navigate to detail view
-                            console.log('Ver questão completa:', question)
+                        <Link 
+                          to={`/questao/enem-${question.year}-${question.index}`}
+                          state={{ 
+                            questao: {
+                              id: question.id,
+                              titulo: question.title || `Questão ${question.index} - ENEM ${question.year}`,
+                              enunciado: question.fullContext + (question.alternativesIntroduction ? '\n\n' + question.alternativesIntroduction : ''),
+                              alternativas: question.alternatives.map((alt: any, index: number) => ({
+                                id: `alt-${index}`,
+                                letra: String.fromCharCode(65 + index), // A, B, C, D, E
+                                texto: alt.text || alt
+                              })),
+                              gabarito: question.correctAlternative,
+                              fonte: `ENEM ${question.year}`,
+                              vestibular: `ENEM ${question.year}`,
+                              dificuldade: 'medium',
+                              tipo: 'matematica',
+                              tags: [`ENEM ${question.year}`, 'Matemática'],
+                              criadoEm: new Date().toISOString(),
+                              isEnemQuestion: true,
+                              enemData: {
+                                year: question.year,
+                                index: question.index,
+                                alternativesIntroduction: question.alternativesIntroduction
+                              }
+                            }
                           }}
+                          className="flex-1"
                         >
-                          <Eye className="h-4 w-4 mr-2" />
-                          Ver Completa
-                        </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full"
+                          >
+                            <Eye className="h-4 w-4 mr-2" />
+                            Ver Completa
+                          </Button>
+                        </Link>
                         <Button
                           variant="default"
                           size="sm"
