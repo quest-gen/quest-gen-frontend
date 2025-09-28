@@ -155,7 +155,7 @@ export function DetalhesQuestao() {
             <Printer className="h-4 w-4 mr-2" />
             Imprimir
           </Button>
-          {typeof navigator !== 'undefined' && navigator.share && (
+          {typeof navigator !== 'undefined' && 'share' in navigator && (
             <Button variant="outline" size="sm" onClick={handleShareQuestion}>
               <Share2 className="h-4 w-4 mr-2" />
               Compartilhar

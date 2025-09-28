@@ -280,7 +280,7 @@ export function TodasQuestoes() {
                 <SelectContent>
                   <SelectItem value="todos">Todas</SelectItem>
                   {dificuldadesUnicas.map(dificuldade => (
-                    <SelectItem key={dificuldade} value={dificuldade}>
+                    <SelectItem key={dificuldade} value={dificuldade || 'unknown'}>
                       {DifficultyMapping[dificuldade as keyof typeof DifficultyMapping] || dificuldade || 'N/A'}
                     </SelectItem>
                   ))}
