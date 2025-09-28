@@ -455,10 +455,22 @@ export async function modificarQuestaoEnem(request: {
 
     console.log('Sending POST request with JSON body:', requestBody)
     
-    const response = await apiClient.post('/api/modify', requestBody)
+    const response = await apiClient.post<any>('/api/modify', requestBody)
     
     console.log('Modify response:', response)
-    return response
+    return response as {
+      title?: string
+      contextTemplate: string
+      alternativesIntroductionTemplate: string
+      alternatives: any[]
+      correctAlternative?: string
+      placeholders: Record<string, string>
+      rendered: {
+        context: string
+        alternativesIntroduction: string
+      }
+      originalQuestion?: any
+    }
   } catch (error) {
     console.error('Erro ao modificar questão ENEM:', error)
     throw error

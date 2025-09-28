@@ -1,4 +1,4 @@
-import { Questao, DifficultyLevel, MathSource, QuestionType, VestibularToSourceMapping, DifficultyMapping } from '@/types/questao'
+import { Questao, DifficultyLevel, MathSource, QuestionType, VestibularToSourceMapping } from '@/types/questao'
 
 /**
  * Converte dificuldade do formato antigo (português) para o novo (inglês)
