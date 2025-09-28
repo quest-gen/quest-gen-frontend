@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { CardQuestao } from '@/components/questoes/CardQuestao'
 import { Plus, BookOpen, Sparkles, TrendingUp } from 'lucide-react'
 import { questoesMock } from '@/lib/mock-data'
