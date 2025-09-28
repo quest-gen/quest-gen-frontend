@@ -67,12 +67,43 @@ export function Home() {
         </Card>
       </div>
 
+      {/* New Feature - Modify ENEM Questions */}
+      <Card className="border-orange-200 bg-orange-50/30">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="flex items-center gap-2 text-orange-900">
+                <Plus className="h-5 w-5" />
+                Modificar Questões ENEM
+              </CardTitle>
+              <CardDescription className="text-orange-700">
+                Ajuste parâmetros de questões reais do ENEM para criar variações personalizadas
+              </CardDescription>
+            </div>
+            <div className="flex gap-2">
+              <Button asChild variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-100">
+                <Link to="/enem">
+                  <Plus className="h-4 w-4 mr-2" />
+                  Lista de Questões
+                </Link>
+              </Button>
+              <Button asChild variant="ghost" className="text-orange-700 hover:bg-orange-100">
+                <Link to="/modificar">
+                  <Plus className="h-4 w-4 mr-2" />
+                  Entrada Direta
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </CardHeader>
+      </Card>
+
       {/* Questões Recentes */}
       <div>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">Questões Recentes</h2>
           <Button variant="outline" asChild>
-            <Link to="/criar">Ver Todas</Link>
+            <Link to="/questoes">Ver Todas</Link>
           </Button>
         </div>
         
