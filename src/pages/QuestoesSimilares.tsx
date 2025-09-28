@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { CardQuestao } from '@/components/questoes/CardQuestao'
 import { ArrowLeft, Loader2, Filter, Shuffle, Target, TrendingUp, BookOpen, Calendar, Zap, Eye, GitCompare } from 'lucide-react'
 import { Questao, DifficultyMapping } from '@/types/questao'
 import { buscarQuestoesSimilares, buscarQuestaoPorId } from '@/lib/api'
@@ -282,7 +281,7 @@ export function QuestoesSimilares() {
                   <SelectItem value="todos">Todas</SelectItem>
                   {dificuldadesUnicas.map(dificuldade => (
                     <SelectItem key={dificuldade} value={dificuldade}>
-                      {DifficultyMapping[dificuldade as keyof typeof DifficultyMapping] || dificuldade}
+                      {DifficultyMapping[dificuldade as keyof typeof DifficultyMapping] || dificuldade || 'N/A'}
                     </SelectItem>
                   ))}
                 </SelectContent>

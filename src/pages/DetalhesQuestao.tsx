@@ -3,7 +3,7 @@ import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowLeft, Calendar, BookOpen, Shuffle, Plus, Download, Share2, Edit3, RefreshCw, Save, Clock, User, Zap, CheckCircle, Copy, Printer } from 'lucide-react'
+import { ArrowLeft, Calendar, BookOpen, Shuffle, Plus, Share2, RefreshCw, Save, Clock, User, Zap, CheckCircle, Copy, Printer } from 'lucide-react'
 import { Questao, DifficultyMapping } from '@/types/questao'
 import { buscarQuestaoPorId } from '@/lib/api'
 import { ExplicacaoQuestao } from '@/components/questoes/ExplicacaoQuestao'
@@ -155,7 +155,7 @@ export function DetalhesQuestao() {
             <Printer className="h-4 w-4 mr-2" />
             Imprimir
           </Button>
-          {navigator.share && (
+          {typeof navigator !== 'undefined' && navigator.share && (
             <Button variant="outline" size="sm" onClick={handleShareQuestion}>
               <Share2 className="h-4 w-4 mr-2" />
               Compartilhar

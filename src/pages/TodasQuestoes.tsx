@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Input } from '@/components/ui/input'
 import { CardQuestao } from '@/components/questoes/CardQuestao'
@@ -282,7 +281,7 @@ export function TodasQuestoes() {
                   <SelectItem value="todos">Todas</SelectItem>
                   {dificuldadesUnicas.map(dificuldade => (
                     <SelectItem key={dificuldade} value={dificuldade}>
-                      {DifficultyMapping[dificuldade as keyof typeof DifficultyMapping] || dificuldade}
+                      {DifficultyMapping[dificuldade as keyof typeof DifficultyMapping] || dificuldade || 'N/A'}
                     </SelectItem>
                   ))}
                 </SelectContent>

@@ -27,7 +27,7 @@ export function QuestoesEnem() {
   const [error, setError] = useState<string | null>(null)
   const [selectedYear, setSelectedYear] = useState<number>(2023)
   const [currentOffset, setCurrentOffset] = useState<number>(136)
-  const [totalQuestions, setTotalQuestions] = useState<number>(0)
+  const [, setTotalQuestions] = useState<number>(0)
   
   const questionsPerPage = 15
   const availableYears = Array.from({ length: 15 }, (_, i) => 2023 - i) // 2023 to 2009
